@@ -3,8 +3,7 @@ let nova=document.getElementById("nova");
 let email=document.getElementById("emailidgiven");
 let error=document.getElementById("errored");
 let password=document.getElementById("inputPassword");
-let password2=document.getElementById("confirmPassword4")
-let msg=document.getElementById("confirmpwd1");
+
     function  phonecheck()
     {
 let regexp=/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
@@ -89,6 +88,8 @@ password.addEventListener('input', function()
 });
 function confirmation()
 {
+    let password2=document.getElementById("confirmPassword4");
+    let msg=document.getElementById("confirmpwd1");
     var pwd= document.getElementById("inputPassword");
     if (pwd==password2)
     {
@@ -101,3 +102,18 @@ function confirmation()
     }
 }
 //ends here//
+function checkform(){
+    let onef=validates();
+let twwof=phonecheck();
+let three=validatePassword();
+    if(onef&&twwof&&three)
+    {
+        alert("Login Successful");
+        
+    setTimeout(function() {window.location = "login.html" });
+        
+    }else{
+        alert("Access denied. Valid username and password is required.");
+    }
+}
+

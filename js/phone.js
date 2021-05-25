@@ -91,14 +91,19 @@ function confirmation()
     let password2=document.getElementById("confirmPassword4");
     let msg=document.getElementById("confirmpwd1");
     var pwd= document.getElementById("inputPassword");
-    if (pwd==password2)
-    {
-        return false;
- 
+    if (pwd.value==password2.value)
+    {  
+        
+     msg.innerHTML="Password is matching!!! ";
+        msg.style.color="green";
+        return true;
+     
     }
     else{
-        msg.innerHTML="Password not matching!!! Please check";
+        msg.innerHTML="Not Matching passwords";
+       
         msg.style.color="red";
+        return false;
     }
 }
 //ends here//
